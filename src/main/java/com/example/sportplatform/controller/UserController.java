@@ -18,7 +18,7 @@ public class UserController {
     @Autowired
     UserDao userDao;
 
-    @RequestMapping("/allUser")
+    @RequestMapping("/allUser") // GET
     public String getUserList(QueryInfo queryInfo){
         System.out.println(queryInfo);
         int numbers = userDao.getUserCounts("%"+queryInfo.getQuery()+"%");// 获取数据总数
@@ -32,7 +32,7 @@ public class UserController {
         return JSON.toJSONString(res);
     }
 
-    @RequestMapping("/updateState")
+    @RequestMapping("/updateState") // PUT
     public String updateUserState(@RequestParam("id") Integer id,
                                   @RequestParam("state") Boolean state){
         int i = userDao.updateState(id, state);
@@ -41,7 +41,7 @@ public class UserController {
         return i > 0 ? "success":"error";
     }
 
-    @RequestMapping("/addUser")
+    @RequestMapping("/addUser") //POST
     public String addUser(@RequestBody User user){
         System.out.println(user);
         user.setRole("普通用户");
@@ -50,14 +50,14 @@ public class UserController {
         return i > 0 ? "success":"error";
     }
 
-    @RequestMapping("/getUpdate")
+    @RequestMapping("/getUpdate") // GET
     public String getUpdateUser(int id){
         System.out.println("编号:"+id);
         User updateUser = userDao.getUpdateUser(id);
         return JSON.toJSONString(updateUser);
     }
 
-    @RequestMapping("/editUser")
+    @RequestMapping("/editUser") // PUT
     public String updateUser(@RequestBody User user){
         System.out.println(user);
         int i = userDao.updateUser(user);
