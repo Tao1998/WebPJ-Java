@@ -5,7 +5,6 @@ import com.example.sportplatform.bean.MainMenu;
 import com.example.sportplatform.dao.MenuDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
