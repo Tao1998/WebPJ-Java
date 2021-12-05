@@ -1,6 +1,6 @@
-package com.example.sportplatform.dao;
+package com.example.movieplatform.dao;
 
-import com.example.sportplatform.bean.Movie;
+import com.example.movieplatform.bean.Movie;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

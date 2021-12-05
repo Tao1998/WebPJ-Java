@@ -2,13 +2,13 @@
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.example.sportplatform.dao.UserDao">
-    <select id="getUserByMessage" resultType="com.example.sportplatform.bean.User">
+<mapper namespace="com.example.movieplatform.dao.UserDao">
+    <select id="getUserByMessage" resultType="com.example.movieplatform.bean.User">
         SELECT * FROM easyuser WHERE
         username=#{username} AND password=#{password} AND state = 1
     </select>
 
-    <select id="getAllUser" resultType="com.example.sportplatform.bean.User">
+    <select id="getAllUser" resultType="com.example.movieplatform.bean.User">
         SELECT * FROM easyuser
         <if test="username !=null ">
             WHERE username like #{username}
@@ -23,7 +23,7 @@
         </if>
     </select>
 
-    <select id="getUpdateUser" resultType="com.example.sportplatform.bean.User">
+    <select id="getUpdateUser" resultType="com.example.movieplatform.bean.User">
         SELECT * FROM easyuser WHERE id = #{id}
     </select>
 

@@ -1,4 +1,4 @@
-package com.example.sportplatform.bean;
+package com.example.movieplatform.bean;
 
 public class User {
     private int id;

@@ -1,6 +1,6 @@
-package com.example.sportplatform.dao;
+package com.example.movieplatform.dao;
 
-import com.example.sportplatform.bean.MainMenu;
+import com.example.movieplatform.bean.MainMenu;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

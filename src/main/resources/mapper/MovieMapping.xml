@@ -2,8 +2,8 @@
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.example.sportplatform.dao.MovieDao">
-    <select id="getAllMovie" resultType="com.example.sportplatform.bean.Movie">
+<mapper namespace="com.example.movieplatform.dao.MovieDao">
+    <select id="getAllMovie" resultType="com.example.movieplatform.bean.Movie">
         SELECT * FROM movie
     </select>
 
@@ -11,7 +11,7 @@
         SELECT count(*) FROM movie
     </select>
 
-    <select id="getAllWatch" resultType="com.example.sportplatform.bean.Movie">
+    <select id="getAllWatch" resultType="com.example.movieplatform.bean.Movie">
         SELECT * FROM movie WHERE (id IN (SELECT mid FROM watchlist WHERE id=#{id}))
         <if test="name !=null ">
             AND name like #{name}

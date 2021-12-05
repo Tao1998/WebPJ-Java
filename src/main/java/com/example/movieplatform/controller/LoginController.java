@@ -1,8 +1,8 @@
-package com.example.sportplatform.controller;
+package com.example.movieplatform.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.example.sportplatform.bean.User;
-import com.example.sportplatform.dao.UserDao;
+import com.example.movieplatform.bean.User;
+import com.example.movieplatform.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

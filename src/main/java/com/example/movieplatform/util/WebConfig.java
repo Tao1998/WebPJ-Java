@@ -1,4 +1,4 @@
-package com.example.sportplatform.util;
+package com.example.movieplatform.util;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

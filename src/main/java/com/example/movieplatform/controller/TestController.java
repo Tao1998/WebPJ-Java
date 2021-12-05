@@ -1,4 +1,4 @@
-package com.example.sportplatform.controller;
+package com.example.movieplatform.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

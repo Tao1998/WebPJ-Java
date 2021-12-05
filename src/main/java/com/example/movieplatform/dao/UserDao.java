@@ -1,6 +1,6 @@
-package com.example.sportplatform.dao;
+package com.example.movieplatform.dao;
 
-import com.example.sportplatform.bean.User;
+import com.example.movieplatform.bean.User;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
