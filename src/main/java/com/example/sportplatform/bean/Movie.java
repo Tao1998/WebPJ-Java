@@ -6,15 +6,17 @@ public class Movie {
     private String director;
     private String region;
     private int year;
+    private String imgSrc;
 
     public Movie() {
     }
 
-    public Movie(String name, String director, String region, int year) {
+    public Movie(String name, String director, String region, int year, String imgSrc) {
         this.name = name;
         this.director = director;
         this.region = region;
         this.year = year;
+        this.imgSrc = imgSrc;
     }
 
     public int getId() {
@@ -37,6 +39,10 @@ public class Movie {
         return year;
     }
 
+    public String getImgSrc() {
+        return imgSrc;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -57,6 +63,10 @@ public class Movie {
         this.year = year;
     }
 
+    public void setImgSrc(String imgSrc) {
+        this.imgSrc = imgSrc;
+    }
+
     @Override
     public String toString() {
         return "Movie{" +
@@ -65,6 +75,7 @@ public class Movie {
                 ", director='" + director + '\'' +
                 ", region='" + region + '\'' +
                 ", year=" + year +
+                ", imgSrc='" + imgSrc + '\'' +
                 '}';
     }
 }

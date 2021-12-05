@@ -5,17 +5,36 @@
 <mapper namespace="com.example.sportplatform.dao.MovieDao">
     <select id="getAllMovie" resultType="com.example.sportplatform.bean.Movie">
         SELECT * FROM movie
-        <if test="name !=null ">
-            WHERE name like #{name}
-        </if>
-        LIMIT #{pageStart},#{pageSize}
     </select>
 
     <select id="getMovieCounts" resultType="java.lang.Integer">
         SELECT count(*) FROM movie
+    </select>
+
+    <select id="getAllWatch" resultType="com.example.sportplatform.bean.Movie">
+        SELECT * FROM movie WHERE (id IN (SELECT mid FROM watchlist WHERE id=#{id}))
         <if test="name !=null ">
-            WHERE name like #{name}
+            AND name like #{name}
+        </if>
+        LIMIT #{pageStart},#{pageSize}
+    </select>
+
+    <select id="getWatchCounts" resultType="java.lang.Integer">
+        SELECT count(*) FROM movie WHERE (id IN (SELECT mid FROM watchlist WHERE id=#{id}))
+        <if test="name !=null ">
+            AND name like #{name}
         </if>
     </select>
+
+    <insert id="addWatch">
+        INSERT IGNORE INTO watchlist
+            (id,mid)
+            VALUE
+            (#{id},#{mid})
+    </insert>
+
+    <delete id="deleteWatch">
+        DELETE FROM watchlist WHERE id = #{id} AND mid = #{mid}
+    </delete>
 
 </mapper>
