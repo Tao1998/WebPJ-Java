@@ -1,41 +1,42 @@
 /*
-Navicat MySQL Data Transfer
+ Navicat Premium Data Transfer
 
-Source Server         : Testblog
-Source Server Version : 50556
-Source Host           : localhost:3306
-Source Database       : easyproject
+ Source Server         : localhost_3306
+ Source Server Type    : MySQL
+ Source Server Version : 80027
+ Source Host           : localhost:3306
+ Source Schema         : easyproject
 
-Target Server Type    : MYSQL
-Target Server Version : 50556
-File Encoding         : 65001
+ Target Server Type    : MySQL
+ Target Server Version : 80027
+ File Encoding         : 65001
 
-Date: 2020-05-27 14:48:58
+ Date: 22/12/2021 15:47:57
 */
 
-SET FOREIGN_KEY_CHECKS=0;
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
 -- Table structure for submenu
 -- ----------------------------
 DROP TABLE IF EXISTS `submenu`;
-CREATE TABLE `submenu` (
-  `id` int(50) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) NOT NULL,
-  `path` varchar(255) NOT NULL,
-  `mid` int(50) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `mid` (`mid`),
-  CONSTRAINT `submenu_ibfk_1` FOREIGN KEY (`mid`) REFERENCES `mainmenu` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=204 DEFAULT CHARSET=utf8;
+CREATE TABLE `submenu`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `path` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `mid` int NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `mid`(`mid`) USING BTREE,
+  CONSTRAINT `submenu_ibfk_1` FOREIGN KEY (`mid`) REFERENCES `mainmenu` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 203 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of submenu
 -- ----------------------------
-INSERT INTO `submenu` VALUES ('101', '用户列表', '/user', '100');
-INSERT INTO `submenu` VALUES ('102', '修改权限', '/rights', '100');
-INSERT INTO `submenu` VALUES ('103', ' 运动模块', '/sport', '100');
-INSERT INTO `submenu` VALUES ('104', '商品模块', '/goods', '100');
-INSERT INTO `submenu` VALUES ('201', '运动科普', '/Introduction', '200');
-INSERT INTO `submenu` VALUES ('202', '卡路里', '/calories', '200');
-INSERT INTO `submenu` VALUES ('203', '营养配餐', '/food', '200');
+INSERT INTO `submenu` VALUES (101, '用户列表', '/userlist', 100);
+INSERT INTO `submenu` VALUES (102, '修改权限', '/rights', 100);
+INSERT INTO `submenu` VALUES (201, '热门电影', '/introduction', 200);
+INSERT INTO `submenu` VALUES (202, '想看列表', '/watchlist', 200);
+
+SET FOREIGN_KEY_CHECKS = 1;
